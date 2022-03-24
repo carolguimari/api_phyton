@@ -55,8 +55,6 @@ class Film(Resource):
             return found_film.to_dict()
         return {"message": "Film not found"}, 404
 
-    def get_all_films():
-        return
 
     def get_film_by_id(id_film):
         found_film = FilmModel.find_film(id_film)

@@ -37,10 +37,12 @@ class FilmModel:
     @classmethod
     def list_to_dict(cls, arguments_request=[]):
         arguments_accepted = ["title", "actor"]
+        existArgumentValid = any(item in arguments_request for item in arguments_accepted)
+
         if len(arguments_request) == 0:
             return loads(dumps(cls._films_list, default=FilmModel.to_dict))
 
-        elif any(item in arguments_request for item in arguments_accepted):
+        elif existArgumentValid:
             found_film = dict()
             for film in cls._films_list:
 
@@ -50,7 +52,7 @@ class FilmModel:
             return loads(dumps(found_film, default=FilmModel.to_dict))
 
         else:
-            return {"erro": "incorrect parameter"}, 404
+            return {"erro": "incorrect parameter"}, 400
 
     def to_dict(self):
         return {
