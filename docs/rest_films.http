@@ -1,0 +1,54 @@
+### CreateFilm
+POST http://localhost:5000/films HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Uma squad do barulho",
+    "rate": 5,
+    "synopsis": "5 programadores muito dos focados fazendo de tudo pra codar com qualidade",
+    "poster_url": "https://imgur.com/gallery/qoM5VLn",
+    "main_cast": [
+        "Miguel",
+        "Gabriel",
+        "Alexia",
+        "Carolina",
+        "Olga"
+    ]
+}
+
+### GetAll
+GET http://localhost:5000/films
+
+### GetFilmByID
+GET http://localhost:5000/films/1648149215914
+
+### ChangeFilmByID
+PUT http://localhost:5000/films/1648149215914 HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Queer Eye - Estilo é no código",
+    "rate": 3,
+    "synopsis": "",
+    "poster_url": "https://imgur.com/gallery/TjQfPzb",
+    "main_cast": [
+        "Miguel",
+        "Gabriel",
+        "Alexia",
+        "Carolina",
+        "Olga"
+    ]
+}
+
+### Get
+GET http://localhost:5000/films?erro=bar
+
+### Get
+GET http://localhost:5000/films?title=Eye
+
+### Get
+GET http://localhost:5000/films?actor=bar
+
+### DeleteFilmByID
+DELETE  http://localhost:5000/films/1648136493470
+

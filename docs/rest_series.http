@@ -1,0 +1,50 @@
+### CreateFilm
+POST http://localhost:5000/series HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Uma squad do barulho",
+    "rate": 5,
+    "synopsis": "5 programadores muito dos focados fazendo de tudo pra codar com qualidade",
+    "poster_url": "https://imgur.com/download/BgiTRRG/",
+    "main_cast": [
+        "Miguel",
+        "Gabriel",
+        "Alexia",
+        "Carolina",
+        "Olga"
+    ]
+}
+
+### GetAll
+GET http://localhost:5000/series
+
+### GetFilmByID
+GET http://localhost:5000/series/1648135820361
+
+### ChangeFilmByID
+PUT http://localhost:5000/series/1648132699933 HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Uma squad do barulho ATUALIZADO",
+    "rate": 5,
+    "synopsis": "5 programadores muito dos focados fazendo de tudo pra codar com qualidade",
+    "poster_url": "https://imgur.com/download/BgiTRRG/",
+    "main_cast": [
+        "Miguel",
+        "Gabriel",
+        "Alexia",
+        "Carolina",
+        "Olga"
+    ]
+}
+
+### Get
+GET http://localhost:5000/series?title=bar
+
+### Get
+GET http://localhost:5000/series?actor=bar
+
+### DeleteFilmByID
+DELETE  http://localhost:5000/series/1648132700600
