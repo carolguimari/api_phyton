@@ -1,19 +1,17 @@
 from flask import Flask
 from flask_restful import Api
-from resources.film import Film
-from resources.serie import Serie
+from resources.media import Media
+from services.database import MyDatabase
+from model.media import MediaModel
 
 app = Flask(__name__)
 api = Api(app)
+database = MyDatabase()
+MediaModel.database_service = database
 
-api.add_resource(Film,
-                 "/films/<int:id_film>",
-                 "/films")
-
-api.add_resource(Serie, "/series/<int:id_serie>",
-                 "/series",
-                 "/series/author/<string:author>",
-                 "/series/titulo/<string:author>")
+api.add_resource(Media,
+                 "/medias/<int:id_media>",
+                 "/medias")
 
 if __name__ == '__main__':
     app.run(debug=True)

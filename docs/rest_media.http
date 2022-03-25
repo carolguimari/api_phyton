@@ -1,0 +1,44 @@
+@host = localhost:5000/
+
+### CreateFilm
+POST http://{{host}}/medias HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Uma squad do barulho",
+    "rate": 5,
+    "synopsis": "5 programadores muito dos focados fazendo de tudo pra codar com qualidade",
+    "poster_url": "https://imgur.com/gallery/qoM5VLn",
+    "main_cast": "Miguel, Gabriel, Alexia, Carolina, Olga"
+}
+
+### GetAll
+GET http://{{host}}/medias
+
+### GetFilmByID
+GET http://{{host}}/medias/1648160670677
+
+### ChangeFilmByID
+PUT http://{{host}}/medias/1648160670677 HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Queer Eye - Estilo é no código",
+    "rate": 3,
+    "synopsis": "Nova Sinopese",
+    "poster_url": "https://imgur.com/gallery/TjQfPzb",
+    "main_cast": "Miguel, Gabriel, Alexia, Carolina, Olga"
+}
+
+### Get
+GET http://{{host}}/medias?erro=bar
+
+### Get
+GET http://{{host}}/medias?title=Eye
+
+### Get
+GET http://{{host}}/medias?actor=bar
+
+### DeleteFilmByID
+DELETE  http://{{host}}/medias/1648136493470
+

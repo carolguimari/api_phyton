@@ -1,0 +1,6 @@
+- id_media
+- title
+- poster_url
+- rate
+- synopsis
+- main_cast
